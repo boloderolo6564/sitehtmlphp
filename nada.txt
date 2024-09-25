@@ -1,0 +1,11 @@
+<?php 
+            foreach($listaImagens[0] as $lista){$lista["imagem"];
+
+            echo $lista;
+            echo"<button class= button type=button>
+            <img class = imagem src=".($lista).">
+            <h3 id = crossfit>crossfit</h3>
+            <p id = crossfit>Descubra a força interior e a técnica impecável necessáriaspara se destacar no ringue. Desafie-se a superar seus limites físicos e mentais enquanto aprende os segredos deste esporte de combate emocionante.</p>
+        </button>";
+           
+            }?>
