@@ -1,0 +1,49 @@
+.noticias{
+    background-color: rgb(54, 130, 237);
+    border-radius: 25px;
+    min-width: 50%;
+    min-height: 1000px;
+    text-align: center;
+    margin-top:10%;
+    margin-left:25%;
+    margin-right:30%;
+    margin-bottom:50%;
+    justify-items: center;
+    border:10px solid red !important;
+}
+.texto12{
+    font-size: 20px;
+    
+}
+.caixa12::placeholder {
+    font-size: 20px; /* Tamanho da fonte do placeholder */
+    color: black; /* Cor do placeholder */
+    text-align: center;
+
+    
+}
+
+.telefone{
+    display:flex;
+    display:inline;
+
+}
+.caixa12{
+   border-radius: 15px;
+   
+   border: none;
+    width: 300px;         
+    padding: 10px;       
+    font-size: 16px;     
+    /* padding-left: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px; */
+
+    
+    
+}
+.login12{
+    color: #000000;
+    padding-top: 80px;
+
+}

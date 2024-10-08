@@ -1,0 +1,176 @@
+*{
+    font-family: poppins;
+    margin:0px;
+    padding:0px;
+}
+
+#caixa{
+    border-radius: 15px;
+    background-color: rgb(186, 231, 233)
+}
+
+.siteboxe{
+    text-align: center;
+    
+}
+header {
+    background: #5167b2;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+.input{
+    
+    border-radius: 10px;
+    padding-left: 10%;
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    padding-right: 10%;
+    margin-left: 20%;
+}
+ .button{
+    border-radius:15px;
+    cursor:pointer;
+ }
+.logo{
+    
+    text-decoration: none;
+    font-family: poppins;
+    font-size: 28px;}
+.siteboxe{
+    background-color:#ddd;
+    padding:20px;
+    border:5px solid black;
+    font:poppins;
+    font-size: 20px;
+
+}
+section{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "esporteContent formularioContent";
+    padding: 20px;
+    flex: 1 0 auto;
+    padding-bottom: 80px;
+}
+.formulario{
+    
+    color: rgb(0, 0, 0);
+    background-color: bisque;
+}
+
+
+#botao{
+    border-radius: 25px;
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100px;
+    margin:10px;
+    padding:10px 20px;
+    
+}
+.contato{
+    border:10px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    display: flex;
+    gap:10px;
+    background-color: rgb(54, 130, 237);
+    max-width: 40%;
+    max-height: 700px;
+    margin-left: 30%;
+    margin-top: 10%;
+    margin-bottom: 30%;
+}
+
+.texto{
+    display: flex;
+    margin-left:20%;
+}
+
+.caixa{
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    margin-left: 20%;
+}
+.caixa2{
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 20%;
+}
+.login{
+    background-color: rgb(54, 130, 237);
+    border-radius: 25px;
+    min-width: 25%;
+    min-height: 300px;
+    text-align: center;
+    margin-top:10%;
+    margin-left:35%;
+    margin-right:50%;
+    margin-bottom:50%;
+    justify-items: center;
+    border:10px solid black;
+
+
+    
+}
+.login2{
+    color: #d5d9e7;
+    padding-top: 80px;
+
+}
+    
+.tudo{
+    display: flex;
+    display: inline;
+}
+#bar{
+    display:flex;
+
+}
+body{
+    background-color:antiquewhite ;
+    
+}
+.home{
+    color: #ddd;
+    padding:4%;
+    margin-right:30%;
+}
+.imagem{
+    width: 300px;
+    height:300px;
+    
+}
+img{
+   
+    border-radius: 15px;
+}
+.esporte,.crossfit{
+    border-radius: 25px;
+    max-width: 300px;
+    margin: 20px;
+    float:right;
+    display:flex;
+}
+#boxe{
+    
+    text-align: center;
+}
+.pboxe{
+    position:absolute;
+
+}
+

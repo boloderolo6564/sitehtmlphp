@@ -1,0 +1,22 @@
+function verificar($site)
+    {
+        if (!$site){return;}
+        $pdo = Database::conexao();
+        $sql = "SELECT  `site` FROM `news_tb` WHERE 1";
+        foreach ($sql as $nome){
+            var_dump($nome);die;
+            if($site == $nome){
+                $resposta = "sim";
+            }else{
+                $resposta = "não";
+            }
+            
+        }
+            var_dump($reposta);die;
+            return $resposta
+    }
+
+ <label class="texto12" for = "#telefone" ></label>
+            <input class = "caixa12"style="margin-top:2%;margin-right:10%;margin-bottom:10%" placeholder = "telefone"  name="telefone" type="text">
+            <label class="texto12" for = "#usuario"></label>
+            <input class ="caixa12" name = "login" placeholder = "Usuario" type = "text"></br>
