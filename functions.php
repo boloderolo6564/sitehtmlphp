@@ -71,66 +71,156 @@ function reduzirStr($str,$quantidade){
         $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $list;
     }
-    function cadastrarnews($titulo,$imagem,$descricao){
-        $site = "html/".$titulo.".php";
-        $resposta=verificar($site);
+
+    function semelhante($categoria){
+        if(!$categoria){return;}
+        $pdo = Database::conexao();
+        $sql = "select * from `news_tb` where `descricao` like '%$categoria%' ";
+        $stmt = $pdo->prepare($sql);
+        $list = $stmt->execute();
+        $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($list);
+        $descricao = $list["descricao"]; 
         
-        var_dump($site);
+
+    }
+     
+    function cadastrarnews($titulo,$imagem,$descricao,$categoria){
+        $imagem ="imagens/".$imagem;
+        $site = "html/".$titulo.".php";
+        $resposta = verificar($site);
+        $categoria = strtoupper($categoria);
+        if ($resposta == "nao"){
+            cadastrarnoticias($site,$titulo,$descricao,$imagem,$categoria);
+
+        }
+        
 
 
 
     }
+    
+    function puxarid(){
+        $pdo = Database::conexao();
+        $sql = "SELECT * FROM news_tb WHERE 1";
+        $stmt = $pdo->prepare($sql);
+        $list = $stmt->execute();
+        $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $list;
+
+    }
+    function news($id){
+        $pdo = Database::conexao();
+        $sql = "SELECT * FROM news_tb WHERE id = $id";
+        $stmt = $pdo->prepare($sql);
+        $list = $stmt->execute();
+        $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $list[0];
+
+    }
     function folhear(){
-        foreach(listas() as $lista){
+        
+        $quantidade = 100;
+        foreach(puxarid() as $lista){
         
             echo"<div class = esporte >";
-            echo"<a href=".$lista["site"].">";
+            echo"<a href=".constant('URL_LOCAL_SITE_NEWS').$lista["id"].">";
             echo"<button class= button type= button>";
-                echo"<img class = imagem src=".$lista["imagem"].">";
-                echo"<h3 id = crossfit>".$lista["Nome"]."</h3>";
-                echo"<p id = crossfit>".$lista["descricao"]."</p>";
+                echo"<img class = imagem src=".$lista["imagens"].">";
+                echo"<h3 id = crossfit>".$lista["titulo"]."</h3>";
+                echo"<p id = crossfit>".reduzirStr($lista["descricao"],$quantidade)."</p>";
                 echo"</button>";
                 echo"</a>";
                 echo"</div>";
+            
             $site = $lista["site"];
-            $titulo = $lista["Nome"];
+            $titulo = $lista["titulo"];
             $descricao = $lista["descricao"];
-            $imagem = $lista["imagem"];
-            $resposta = verificar($site);
+            $imagem = $lista["imagens"];
+            $conteudo = verificar($site);
+            $resposta = $conteudo[0];
+            $nada = "";
+            $id = $conteudo[1];
+            echo($nada);
             if($resposta == "nao"){
-                cadastrarnoticias($site,$titulo,$descricao,$imagem);
+                cadastrarnoticias($site,$titulo,$descricao,$imagem,$categoria);
             }
         }
+    }
+   
+    function verificarLogin($login){
+        $pdo = Database::conexao();
+        $sql = "SELECT `id`,`nome`,`login`,`senha` FROM register_tb WHERE `login` = '$login'";
+        // var_dump($sql);die;
+        $stmt = $pdo->prepare($sql);
+        $list = $stmt->execute();
+        $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $list = $list[0];
+        return $list;
+    }
+
+    function validaSenha($senhaDigitada, $senhaBd){
+        var_dump($senhaDigitada, $senhaBd);
+        if(!$senhaDigitada || !$senhaBd){return false;}
+        if($senhaDigitada == $senhaBd){return true;}
+        return false;
+    }
+
+    function protegerTela(){
+        if(
+            !$_SESSION || 
+            !$_SESSION["usuario"]["status"] === 'logado'
+        ){
+            header('Location:'.constant("URL_LOCAL_SITE_PAGINA_LOGIN"));
+        }
+    }
+
+    function registrarAcessoValido($usuarioCadastrado){
+        var_dump($usuarioCadastrado);
+        $_SESSION["usuario"]["nome"] = $usuarioCadastrado['nome'];
+        $_SESSION["usuario"]["id"] = $usuarioCadastrado['id'];
+        $_SESSION["usuario"]["status"] = 'logado';
+
+    }
+    function limparSessao(){
+        unset($_SESSION["usuario"]);
+        header('Location:'.constant("URL_LOCAL_SITE_PAGINA_LOGIN"));
     }
     function verificar($site)
     {   
         if (!$site){return;}
         $pdo = Database::conexao();
         $sql = "SELECT  `site` FROM `news_tb` WHERE 1";
+        $sql2 = "SELECT `id` FROM `news_tb` WHERE 1";
         $stmt = $pdo->query($sql);
+        $stmt2 = $pdo->query($sql2);
         $sites = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        $id = $stmt2->fetchALL(PDO::FETCH_COLUMN);
         $resposta = "nao";
         foreach ($sites as $nome){
 
             if($site == $nome){
-                $resposta = "sim";}
+                $resposta = "sim";
+                return $resposta;}
+        return $resposta;
+                
 
             
-        }   
-        return $resposta;
+        }
     }
     
-    function cadastrarnoticias($site,$titulo,$descricao,$imagem)
+    function cadastrarnoticias($site,$titulo,$descricao,$imagem,$categoria)
     {       
-        if(!$site|| !$titulo || !$descricao || !$imagem ){return;}
-        $sql = "INSERT INTO `news_tb`(`site`, `titulo`, `descricao`, `imagens`)
-        VALUES (:site,:nome,:descricao,:imagem)";
+        if(!$site|| !$titulo || !$descricao || !$imagem|!$categoria ){return;}
+        $sql = "INSERT INTO `news_tb`(`site`, `titulo`, `descricao`, `imagens`,`categoria`)
+        VALUES (:site,:titulo,:descricao,:imagem,:categoria)";
         $pdo = Database::conexao();
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':site', $site);
         $stmt->bindParam(':titulo', $titulo);
         $stmt->bindParam(':descricao', $descricao);
         $stmt->bindParam(':imagem', $imagem);
+        $stmt->bindParam(':categoria', $categoria);
         $result = $stmt->execute();
         return ($result)?true:false;
 

@@ -20,3 +20,11 @@ function verificar($site)
             <input class = "caixa12"style="margin-top:2%;margin-right:10%;margin-bottom:10%" placeholder = "telefone"  name="telefone" type="text">
             <label class="texto12" for = "#usuario"></label>
             <input class ="caixa12" name = "login" placeholder = "Usuario" type = "text"></br>
+
+            echo"<div  class = esporte>";
+echo"<labek>";
+echo"<img style = width: 1850px; src=".$imagem.">";
+echo "<h3>".$titulo."</h3>";
+echo "<p style =text-align:left; >".$descricao."</p>";
+echo "</labek>";
+echo "</div>";

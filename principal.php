@@ -7,9 +7,9 @@ include_once("functions.php");?>
     <section>
         <div>
     <?php
-
-    folhear()
-        
+    folhear();
+    
+    
         ?>
         
         </div>

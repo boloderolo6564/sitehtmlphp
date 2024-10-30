@@ -1,6 +1,6 @@
 <?php include_once("header.php")?> 
 
-<div class = "registro" >
+<div class = "login" >
         <form class = "login2" method="POST" action="#">
             <p style="font-size:20px;text-align:center;">Preencha com os seus dados</p><br>
             <label class="texto" for = "#nome">nome completo:</label>
