@@ -7,11 +7,9 @@
             <label class="texto12" for = "#imagem"></label>
             <input class = "caixa12" style = "width:37%" placeholder="caminho da imagem" name="imagem" type="text"><br>
             <label class="texto12" for = "#categoria"></label>
-            <input class = "caixa12"style="margin-right:6%" placeholder="Categoria" name ="categoria" type="text">
+            <input class = "caixa12" style="margin-right:6%" placeholder="Categoria" name ="categoria" type="text">
             <label class="texto12" for ="#descricao" name ="descricao"></label>
             <textarea name = "descricao" placeholder = "conteúdo" style = "margin-top:5%;width:70%;height:40%;padding: 10px;font-size: 16px;" rows = "4" cols= "50"></textarea></br>
-            
-            <input class = "caixa12"style="margin-right:6%" placeholder="Categoria" name = "categoria" type="hidden">
 
             <button style = "width:20%;height:5%;cursor:pointer;padding:3px 30px;border-radius: 20px;background-color:aquamarine ;margin-right:3%;margin-top: 3% ;"type = "submit">Registrar</button><br>
             

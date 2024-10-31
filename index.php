@@ -59,7 +59,6 @@ if($paginaUrl === "principal"){
 }elseif($paginaUrl === "contato"){
   cadastrarContato($nome,$sobrenome,$email,$telefone,$mensagem);
 }elseif($paginaUrl === "cadastrar-noticias"){
-  var_dump($categoria);
   cadastrarnews($titulo,$imagem,$descricao,$categoria);
 }elseif($paginaUrl === "login"){
   $usuarioCadastrado = verificarLogin($login);

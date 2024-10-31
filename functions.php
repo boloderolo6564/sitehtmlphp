@@ -75,13 +75,11 @@ function reduzirStr($str,$quantidade){
     function semelhante($categoria){
         if(!$categoria){return;}
         $pdo = Database::conexao();
-        $sql = "select * from `news_tb` where `descricao` like '%$categoria%' ";
+        $sql = "select * from `news_tb`  where `categoria` like '%$categoria%' limit 5";
         $stmt = $pdo->prepare($sql);
         $list = $stmt->execute();
         $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($list);
-        $descricao = $list["descricao"]; 
-        
+        return $list;
 
     }
      
@@ -123,7 +121,7 @@ function reduzirStr($str,$quantidade){
         $quantidade = 100;
         foreach(puxarid() as $lista){
         
-            echo"<div class = esporte >";
+            echo"<div style = 'float:left;'  class = esporte >";
             echo"<a href=".constant('URL_LOCAL_SITE_NEWS').$lista["id"].">";
             echo"<button class= button type= button>";
                 echo"<img class = imagem src=".$lista["imagens"].">";

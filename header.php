@@ -58,7 +58,6 @@
         </div>
     </header>
     <br>
-    
     <?php
     include_once("functions.php")
     ?>
