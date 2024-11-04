@@ -124,7 +124,7 @@ function reduzirStr($str,$quantidade){
             echo"<div style = 'float:left;'  class = esporte >";
             echo"<a href=".constant('URL_LOCAL_SITE_NEWS').$lista["id"].">";
             echo"<button class= button type= button>";
-                echo"<img class = imagem src=".$lista["imagens"].">";
+                echo"<img class = imagem ; src=".$lista["imagens"].">";
                 echo"<h3 id = crossfit>".$lista["titulo"]."</h3>";
                 echo"<p id = crossfit>".reduzirStr($lista["descricao"],$quantidade)."</p>";
                 echo"</button>";
@@ -254,6 +254,22 @@ function reduzirStr($str,$quantidade){
         $stmt->bindParam(':telefone', $telefone);
         $stmt->bindParam(':login', $login);
         $stmt->bindParam(':senha', $senha);
+        $result = $stmt->execute();
+        return ($result)?true:false;
+    }
+    function cadastrarContato($nome,$sobrenome,$email,$telefone,$mensagem)
+    {
+        if(!$nome || !$sobrenome || !$email || !$telefone || !$mensagem){return;}
+        $sql = "INSERT INTO `contato_tb` (`nome`,`sobrenome`,`email`,`telefone`,`mensagem`)
+        VALUES(:nome,:sobrenome,:email,:telefone,:mensagem)";
+        $senha = criptografia($senha);
+        $pdo = Database::conexao();
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':sobrenome', $sobrenome);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':telefone', $telefone);
+        $stmt->bindParam(':mensagem', $mensagem);
         $result = $stmt->execute();
         return ($result)?true:false;
     }

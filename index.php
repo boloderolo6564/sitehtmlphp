@@ -5,6 +5,9 @@ include_once("functions.php");
 $nome = ($_SERVER["REQUEST_METHOD"] == "POST"
 && !empty($_POST['nome'])) ? $_POST['nome'] : null;
 
+$sobrenome = ($_SERVER["REQUEST_METHOD"] == "POST"
+&& !empty($_POST['sobrenome'])) ? $_POST['sobrenome'] : null;
+
 $email = ($_SERVER["REQUEST_METHOD"] == "POST"
 && !empty($_POST['email'])) ? $_POST['email'] : null;
 
@@ -32,6 +35,9 @@ $imagem = ($_SERVER["REQUEST_METHOD"] == "POST"
 $descricao = ($_SERVER["REQUEST_METHOD"] == "POST"
    && !empty($_POST['descricao'])) ? $_POST['descricao'] : null;
 
+$mensagem = ($_SERVER["REQUEST_METHOD"] == "POST"
+   && !empty($_POST['mensagem'])) ? $_POST['mensagem'] : null;
+
 $categoria = ($_SERVER["REQUEST_METHOD"] == "POST"
    && !empty($_POST['categoria'])) ? $_POST['categoria'] : null;
 
@@ -42,7 +48,7 @@ $resposta = calcularImc($peso, $altura);
 $classificacao = classificarImc($resposta);
 
 
-var_dump($resposta);
+
 
 if($_GET && isset($_GET['pagina'])){
   $paginaUrl = $_GET['pagina'];
@@ -50,7 +56,7 @@ if($_GET && isset($_GET['pagina'])){
 }else{
   $paginaUrl = null;
 }
-var_dump($paginaUrl);
+
 
 if($paginaUrl === "principal"){
   cadastrar($nome,$email,$peso,$altura,$resposta,$classificacao);
@@ -81,7 +87,7 @@ if($paginaUrl === "principal"){
   include_once("principal.php");
 }elseif($paginaUrl === "contato"){
   protegerTela();
-include_once("html/contato.php");
+  include_once("html/contato.php");
 }elseif($paginaUrl === "login"){
 include_once("html/login.php");
 }elseif($paginaUrl === "registro"){

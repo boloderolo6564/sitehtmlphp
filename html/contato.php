@@ -1,27 +1,25 @@
-<?php include_once("../header.php")?>
+<?php include_once("header.php")?>
 </form method="POST" action="#">
-<div class = "contato">
-    <div>
-    <p style="font-size:30px;;margin-left:40%;padding:5%;width:80%;color:aliceblue;">Contate-nos</p>
-    <input id = "nome" class = "caixa2" style="padding:2% 8%;font-size: 20px;" placeholder="Nome" type="text">
+<div class = "noticias" >
+        <form class = "login12" method="POST" action="#">
+            <p style="color:white;font-size:20px;text-align:center;">Preencha os dados e escreva a noticia </p><br>
+            <label class="texto12" for = "#nome"></label>
+            <input class = "caixa12"style="margin-bottom:4%;margin-right:6%" placeholder="Nome" name = "nome" type="text">
+            <label class="texto12" for = "#sobrenome"></label>
+            <input class = "caixa12" style = "width:37%" placeholder="Sobrenome" name="sobrenome" type="text"><br>
+            <input class = "caixa12" style = "margin-right:%" placeholder="Telefone" name="telefone" type="text">
+            <label class="texto12" for = "#email"></label>
+            <input class = "caixa12" style="margin-left:7%;width:37%" placeholder="Email" name ="email" type="text">
+            <label class="texto12" for ="#descricao" name ="mensagem"></label>
+            <textarea name = "mensagem" placeholder = "Mensagem" style = "margin-top:5%;width:70%;height:40%;padding: 10px;font-size: 16px;" rows = "4" cols= "50"></textarea></br>
+
+            <button style = "width:20%;height:5%;cursor:pointer;padding:3px 30px;border-radius: 20px;background-color:aquamarine ;margin-right:3%;margin-top: 3% ;"type = "submit">Enviar</button><br>
+            
+            
+            
+            
+        </form>
 </div>
-    <div>
-    <input id = "sobrenome"class = "caixa2" style="margin-top:28%;margin-left:40%;padding:2% 8%;font-size:20px"placeholder= "Sobrenome"  type="text">
-</div>
-<div>
-    <input id = "email" class = "caixa2" style="margin-top:60%;margin-left:-189%;padding:2% 8%;font-size:20px"  placeholder="Email" type="text">
-</div>
-<div>
-    <input id="telefone" class = "caixa2" style="margin-top:60%;margin-left:-168%;padding:2% 8%;font-size:20px"  placeholder="Número" type="text">
-</div>
-<div>
-    <input id="telefone" class = "caixa2" style="margin-top:90%;margin-left:-398%;padding:10% 10%;font-size:20px"  placeholder="Número" type="text">
-</div>
-<div>
-    <button style = "cursor:pointer;background-color:rgba(107, 189, 248, 0.858);color:rgb(255, 255, 255);border-radius:8px;margin-left:-2210%;margin-top: 600%;padding:20% 500%;font-size: 110%;"type="submit"><p>Enviar</p></button>
-</div>
-</div>
-</form>
 <header>
         <a class="logo"  href="../index.php"><p class = "home">InfoSports</p></a>
         <a href="/html/login.php"><p style="color: aliceblue;font-size:25px;">volte para o topo</p></a>

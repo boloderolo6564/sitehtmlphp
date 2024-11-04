@@ -30,6 +30,10 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/cadastrarnoticias.css">
     <?php endif; ?>
+    <?php if($paginaUrl === "contato"):?>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/cadastrarnoticias.css">
+    <?php endif; ?>
 
 
     
