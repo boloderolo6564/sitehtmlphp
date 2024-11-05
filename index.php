@@ -23,7 +23,7 @@ $telefone = ($_SERVER["REQUEST_METHOD"] == "POST"
 $login = ($_SERVER["REQUEST_METHOD"] == "POST"
  && !empty($_POST['login'])) ? $_POST['login'] : null;
  
-$senha = ($_SERVER["REQUEST_METHOD"] == "POST"
+@$senha = ($_SERVER["REQUEST_METHOD"] == "POST"
  && !empty(criptografia($_POST['senha']))) ? criptografia($_POST['senha']) : null;
   
 $titulo = ($_SERVER["REQUEST_METHOD"] == "POST"
@@ -76,6 +76,8 @@ if($paginaUrl === "principal"){
 
   ){
       registrarAcessoValido($usuarioCadastrado);
+      $paginaUrl = "principal";
+      
       
   }
 }elseif($paginaUrl === "sair"){

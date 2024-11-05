@@ -20,9 +20,4 @@
             
         </form>
 </div>
-<header>
-        <a class="logo"  href="../index.php"><p class = "home">InfoSports</p></a>
-        <a href="/html/login.php"><p style="color: aliceblue;font-size:25px;">volte para o topo</p></a>
-</header>
-</body>
-</html>
+<?php include_once("footer.php");?>

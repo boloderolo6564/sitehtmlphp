@@ -30,8 +30,5 @@ foreach(semelhante($site["categoria"]) as $list ){
   echo"</div>";
 };
 echo"</div>";
-echo("<header style=display-flex;margin-top:25%;>");
-echo("<a  class = logo href=../index.html><p style=color:white;margin-right:40%>InfoSports</p></a>");
-echo("<a href=trilha.html><p style=color: aliceblue;font-size:25px;>volte para o topo</p></a>");
-echo("</header>");
+include_once("footer-news.php");
 ?>

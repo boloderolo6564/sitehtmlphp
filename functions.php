@@ -153,12 +153,13 @@ function reduzirStr($str,$quantidade){
         $stmt = $pdo->prepare($sql);
         $list = $stmt->execute();
         $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $list = $list[0];
+        $list = @$list[0];
+        
         return $list;
     }
 
     function validaSenha($senhaDigitada, $senhaBd){
-        var_dump($senhaDigitada, $senhaBd);
+        
         if(!$senhaDigitada || !$senhaBd){return false;}
         if($senhaDigitada == $senhaBd){return true;}
         return false;
@@ -174,7 +175,6 @@ function reduzirStr($str,$quantidade){
     }
 
     function registrarAcessoValido($usuarioCadastrado){
-        var_dump($usuarioCadastrado);
         $_SESSION["usuario"]["nome"] = $usuarioCadastrado['nome'];
         $_SESSION["usuario"]["id"] = $usuarioCadastrado['id'];
         $_SESSION["usuario"]["status"] = 'logado';

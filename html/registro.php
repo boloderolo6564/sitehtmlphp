@@ -20,12 +20,7 @@
             
             
             
-            <a style ="font-size:13px ;color: aliceblue;margin-right: 3%;" href="login.html">login</a>
+            <a style ="font-size:13px ;color: aliceblue;margin-right: 3%;" href="<?=constant('URL_LOCAL_SITE_PAGINA').'login'?>">login</a>
         </form>
 </div>
-<header>
-        <a class="logo"  href="../index.php"><p class = "home">InfoSports</p></a>
-        <a href="/html/registro.php"><p style="color: aliceblue;font-size:25px;">volte para o topo</p></a>
-</header>
-</body>
-</html>
+<?php include_once("footer.php");?>

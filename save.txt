@@ -1,30 +1,6 @@
-function verificar($site)
-    {
-        if (!$site){return;}
-        $pdo = Database::conexao();
-        $sql = "SELECT  `site` FROM `news_tb` WHERE 1";
-        foreach ($sql as $nome){
-            var_dump($nome);die;
-            if($site == $nome){
-                $resposta = "sim";
-            }else{
-                $resposta = "não";
-            }
-            
+try{
+            $list = $list[0];
+            throw new Exception("Warning: Undefined array key 0 in C:\xampp\htdocs\sitehtmlphp\functions.php on line 157    ");
+        }catch (Exception $e){
+            error_log($e->getMessage());
         }
-            var_dump($reposta);die;
-            return $resposta
-    }
-
- <label class="texto12" for = "#telefone" ></label>
-            <input class = "caixa12"style="margin-top:2%;margin-right:10%;margin-bottom:10%" placeholder = "telefone"  name="telefone" type="text">
-            <label class="texto12" for = "#usuario"></label>
-            <input class ="caixa12" name = "login" placeholder = "Usuario" type = "text"></br>
-
-            echo"<div  class = esporte>";
-echo"<labek>";
-echo"<img style = width: 1850px; src=".$imagem.">";
-echo "<h3>".$titulo."</h3>";
-echo "<p style =text-align:left; >".$descricao."</p>";
-echo "</labek>";
-echo "</div>";
