@@ -84,23 +84,23 @@ if($paginaUrl === "principal"){
   limparSessao();
 }
  
-include_once("header.php");
+include_once("view/header.php");
 if($paginaUrl === "principal"){
-  include_once("principal.php");
+  include_once("view/principal.php");
 }elseif($paginaUrl === "contato"){
   protegerTela();
-  include_once("html/contato.php");
+  include_once("view/contato.php");
 }elseif($paginaUrl === "login"){
-include_once("html/login.php");
+include_once("view/login.php");
 }elseif($paginaUrl === "registro"){
-include_once("html/registro.php");
+include_once("view/registro.php");
  }elseif($paginaUrl === "cadastrar-noticias"){
   protegerTela();
-include_once("html/news.php");
+include_once("view/news.php");
 }elseif($paginaUrl === "viewNews"){
-include_once("viewNews.php");
+include_once("view/viewNews.php");
 }elseif($paginaUrl === "sessao"){
-include_once("sessao.php");
+include_once("view/sessao.php");
   }else{
   echo"404 página não existe";
  }
