@@ -6,8 +6,12 @@
             <input class = "caixa12"style="margin-bottom:4%;margin-right:6%" placeholder="Titulo da noticia" name = "titulo" type="text">
             <label class="texto12" for = "#imagem"></label>
             <input class = "caixa12" style = "width:37%" placeholder="caminho da imagem" name="imagem" type="text"><br>
-            <label class="texto12" for = "#categoria"></label>
-            <input class = "caixa12" style="margin-right:6%" placeholder="Categoria" name ="categoria" type="text">
+            <label class="texto12" for = "#categoria" style= "color:white;">Categoria:</label>
+            <select name = "categoria" id ='categoria'><?php  $categoria = categoria();foreach($categoria as $list){$list = $list["Categoria"];echo"<option value=".$list.">".$list."</option>";}?></select>
+            </a>  
+            <a href="<?=constant('URL_LOCAL_SITE_PAGINA').'cadastrar-categoria'?>">
+            <button  type = "button"> Nova categoria</button> 
+            </a></br>
             <label class="texto12" for ="#descricao" name ="descricao"></label>
             <textarea name = "descricao" placeholder = "conteúdo" style = "margin-top:5%;width:70%;height:40%;padding: 10px;font-size: 16px;" rows = "4" cols= "50"></textarea></br>
 
@@ -18,5 +22,5 @@
             
         </form>
 </div>
-<?php include_once("footer.php");?>
+<?php include_once("footer.php"); var_dump($categoria);?>
 

@@ -34,6 +34,10 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/cadastrarnoticias.css">
     <?php endif; ?>
+    <?php if($paginaUrl === "cadastrar-categoria"):?>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/cadastrarnoticias.css">
+    <?php endif; ?>
 
 
     
@@ -54,6 +58,7 @@
         <a href="<?=constant('URL_LOCAL_SITE_PAGINA').'cadastrar-noticias'?>">
         <button id="botao" type = "button"> Registar noticiais</button> 
         </a> 
+         
         </a>  
         <a href="<?=constant('URL_LOCAL_SITE_PAGINA').'sair'?>">
         <button id="botao" type = "button"> Sair</button> 

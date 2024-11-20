@@ -1,6 +1,14 @@
-try{
-            $list = $list[0];
-            throw new Exception("Warning: Undefined array key 0 in C:\xampp\htdocs\sitehtmlphp\functions.php on line 157    ");
-        }catch (Exception $e){
-            error_log($e->getMessage());
-        }
+<?php include_once("header.php");?>
+<div class = "noticias" style="height:50px;"  >
+        <form class = "login12"  method="POST" action="#">
+            <p style="color:white;font-size:20px;text-align:center;">Preencha os dados e escreva a noticia </p><br>
+            <label class="texto12" for = "#titulo"></label>
+            <input class = "caixa12"style="margin-bottom:4%;margin-right:6%" placeholder="Categoria" name = "categoria" type="text"></br>
+            <button style = "width:20%;height:10%;cursor:pointer;padding:3px 30px;border-radius: 20px;background-color:aquamarine ;margin-right:3%;margin-top: % ;"type = "submit">Registrar</button><br>
+            
+            
+            
+            
+        </form>
+</div>
+<?php include_once("footer.php");?>

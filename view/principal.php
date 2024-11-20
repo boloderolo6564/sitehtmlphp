@@ -1,8 +1,15 @@
 <?php
 include_once("header.php");
-include_once("functions.php");?>
+include_once("functions.php");
+include_once("index.php");?>
 <body>
-    <h2 style="display:flex;align-items:center;justify-content:center">BEM VINDO A INFOSPORTS!</h2>
+
+    <?php $nome[0] = $_SESSION["usuario"];
+    
+    
+    
+     echo"h2 style= display:flex;align-items:center;justify-content:center > BEM VINDO".$nome."A INFOSPORTS!</h2>";
+    var_dump($nome);?>
     <P style="display:flex;align-items:center;justify-content:center">Aqui é onde você encontra todos os itens mais novos e modernos do seu esporte preferido.</P>
     <section>
         <div>

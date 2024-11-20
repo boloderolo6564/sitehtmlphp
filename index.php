@@ -56,7 +56,7 @@ if($_GET && isset($_GET['pagina'])){
 }else{
   $paginaUrl = null;
 }
-
+include_once("view/header.php");
 
 if($paginaUrl === "principal"){
   cadastrar($nome,$email,$peso,$altura,$resposta,$classificacao);
@@ -66,8 +66,17 @@ if($paginaUrl === "principal"){
   cadastrarContato($nome,$sobrenome,$email,$telefone,$mensagem);
 }elseif($paginaUrl === "cadastrar-noticias"){
   cadastrarnews($titulo,$imagem,$descricao,$categoria);
+}elseif($paginaUrl === "cadastrar-categoria"){
+ $resposta = cadastrarcategoria($categoria);
+  if ( $resposta == false){
+    echo"<p  style = text-align:center;margin-bottom:-8%;margin-left:-3%>".$resposta."<</p>";
+  }else{
+    echo"<p style = text-align:center;margin-bottom:-8%;margin-left:-3%>".$resposta."</p>";
+  }
 }elseif($paginaUrl === "login"){
   $usuarioCadastrado = verificarLogin($login);
+
+
   
   
   if(
@@ -84,9 +93,13 @@ if($paginaUrl === "principal"){
   limparSessao();
 }
  
-include_once("view/header.php");
+
 if($paginaUrl === "principal"){
+  
   include_once("view/principal.php");
+}elseif($paginaUrl === "cadastrar-categoria"){
+  protegerTela();
+  include_once("view/categoria.php"); 
 }elseif($paginaUrl === "contato"){
   protegerTela();
   include_once("view/contato.php");
@@ -104,4 +117,5 @@ include_once("view/sessao.php");
   }else{
   echo"404 página não existe";
  }
+
 ?>
