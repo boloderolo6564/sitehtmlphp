@@ -94,7 +94,7 @@ if($paginaUrl === "principal"){
   }
 }elseif($paginaUrl === "sair"){
   limparSessao();
-}
+}d
  
 
 if($paginaUrl === "principal"){
