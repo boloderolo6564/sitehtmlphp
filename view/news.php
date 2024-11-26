@@ -4,8 +4,10 @@
             <p style="color:white;font-size:20px;text-align:center;">Preencha os dados e escreva a noticia </p><br>
             <label class="texto12" for = "#titulo"></label>
             <input class = "caixa12"style="margin-bottom:4%;margin-right:6%" placeholder="Titulo da noticia" name = "titulo" type="text">
-            <label class="texto12" for = "#imagem"></label>
-            <input class = "caixa12" style = "width:37%" placeholder="caminho da imagem" name="imagem" type="text"><br>
+            <div class="input-box">
+                <!-- <input type="text" id="imagem" name="imagem" placeholder="Imagem"> -->
+                <input type="file" name="fileToUpload" id="fileToUpload">
+            </div>
             <label class="texto12" for = "#categoria" style= "color:white;">Categoria:</label>
             <select name = "categoria" id ='categoria'><?php  $categoria = categoria();foreach($categoria as $list){$list = $list["Categoria"];echo"<option value=".$list.">".$list."</option>";}?></select>
             </a>  

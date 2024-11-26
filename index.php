@@ -30,7 +30,7 @@ $titulo = ($_SERVER["REQUEST_METHOD"] == "POST"
   && !empty($_POST['titulo'])) ? $_POST['titulo'] : null;
   
 $imagem = ($_SERVER["REQUEST_METHOD"] == "POST"
-   && !empty($_POST['imagem'])) ? $_POST['imagem'] : null;
+  && !empty($_POST['fileToUpload'])) ? $_POST['fileToUpload'] : null;
 
 $descricao = ($_SERVER["REQUEST_METHOD"] == "POST"
    && !empty($_POST['descricao'])) ? $_POST['descricao'] : null;
@@ -65,6 +65,9 @@ if($paginaUrl === "principal"){
 }elseif($paginaUrl === "contato"){
   cadastrarContato($nome,$sobrenome,$email,$telefone,$mensagem);
 }elseif($paginaUrl === "cadastrar-noticias"){
+  
+  $imagem = upload($imagem);
+  var_dump($imagem);
   cadastrarnews($titulo,$imagem,$descricao,$categoria);
 }elseif($paginaUrl === "cadastrar-categoria"){
  $resposta = cadastrarcategoria($categoria);
