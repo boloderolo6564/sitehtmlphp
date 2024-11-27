@@ -1,6 +1,6 @@
 <?php include_once("header.php");?>
 <div class = "noticias" >
-        <form class = "login12" method="POST" action="#">
+        <form class = "login12" method="POST" action="#" enctype="multipart/form-data" >
             <p style="color:white;font-size:20px;text-align:center;">Preencha os dados e escreva a noticia </p><br>
             <label class="texto12" for = "#titulo"></label>
             <input class = "caixa12"style="margin-bottom:4%;margin-right:6%" placeholder="Titulo da noticia" name = "titulo" type="text">

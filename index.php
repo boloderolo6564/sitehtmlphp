@@ -29,7 +29,7 @@ $login = ($_SERVER["REQUEST_METHOD"] == "POST"
 $titulo = ($_SERVER["REQUEST_METHOD"] == "POST"
   && !empty($_POST['titulo'])) ? $_POST['titulo'] : null;
   
-$imagem = ($_SERVER["REQUEST_METHOD"] == "POST"
+$uploadimagem = ($_SERVER["REQUEST_METHOD"] == "POST"
   && !empty($_POST['fileToUpload'])) ? $_POST['fileToUpload'] : null;
 
 $descricao = ($_SERVER["REQUEST_METHOD"] == "POST"
@@ -65,8 +65,8 @@ if($paginaUrl === "principal"){
 }elseif($paginaUrl === "contato"){
   cadastrarContato($nome,$sobrenome,$email,$telefone,$mensagem);
 }elseif($paginaUrl === "cadastrar-noticias"){
-  
-  $imagem = upload($imagem);
+  var_dump($uploadimagem);
+  $imagem = upload($uploadimagem);
   var_dump($imagem);
   cadastrarnews($titulo,$imagem,$descricao,$categoria);
 }elseif($paginaUrl === "cadastrar-categoria"){
@@ -94,7 +94,7 @@ if($paginaUrl === "principal"){
   }
 }elseif($paginaUrl === "sair"){
   limparSessao();
-}d
+}
  
 
 if($paginaUrl === "principal"){
