@@ -66,6 +66,7 @@ function reduzirStr($str,$quantidade){
         return $list;
 
     }
+    
     function cadastrarcategoria($categoria){
         $categoria = strtoupper($categoria);
         $pdo = Database::conexao();
