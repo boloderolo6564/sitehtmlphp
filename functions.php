@@ -85,7 +85,8 @@ function reduzirStr($str,$quantidade){
         else{
             return $resposta = "CATEGORIA JÁ EXISTE";
         }
-    }
+    }  
+    
     function calcularImc($peso, $altura){
         $resposta = 0;
         if($peso && $altura){
