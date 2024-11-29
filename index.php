@@ -65,9 +65,8 @@ if($paginaUrl === "principal"){
 }elseif($paginaUrl === "contato"){
   cadastrarContato($nome,$sobrenome,$email,$telefone,$mensagem);
 }elseif($paginaUrl === "cadastrar-noticias"){
-  var_dump($uploadimagem);
-  $imagem = upload($uploadimagem);
-  var_dump($imagem);
+  
+  $imagem = "assets/uploads/".upload($uploadimagem);
   cadastrarnews($titulo,$imagem,$descricao,$categoria);
 }elseif($paginaUrl === "cadastrar-categoria"){
  $resposta = cadastrarcategoria($categoria);
