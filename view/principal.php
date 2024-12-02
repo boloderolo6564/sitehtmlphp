@@ -4,12 +4,15 @@ include_once("functions.php");
 include_once("index.php");?>
 <body>
 
-    <?php $nome[0] = $_SESSION["usuario"];
-    
-    
-    
-     echo"h2 style= display:flex;align-items:center;justify-content:center > BEM VINDO".$nome."A INFOSPORTS!</h2>";
-    var_dump($nome);?>
+    <?php
+    if (!$_SESSION){
+      echo"<h2 style= display:flex;align-items:center;justify-content:center > BEM VINDO  A INFOSPORTS!</h2>";}
+    else{
+    foreach ($_SESSION as $lista);
+    $nome = $lista["nome"];
+    $id = $lista["id"];
+    $status = $lista["status"];
+     echo"<h2 style= display:flex;align-items:center;justify-content:center > BEM VINDO ".$nome." A INFOSPORTS!</h2>";}?>
     <P style="display:flex;align-items:center;justify-content:center">Aqui é onde você encontra todos os itens mais novos e modernos do seu esporte preferido.</P>
     <section>
         <div>

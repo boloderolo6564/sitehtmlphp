@@ -109,7 +109,7 @@ function reduzirStr($str,$quantidade){
     function semelhante($categoria){
         if(!$categoria){return;}
         $pdo = Database::conexao();
-        $sql = "select * from `news_tb`  where `categoria` like '%$categoria%' limit 5'";
+        $sql = "select * from `news_tb`  where `categoria` like '%$categoria%' limit 5";
         $stmt = $pdo->prepare($sql);
         $list = $stmt->execute();
         $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
