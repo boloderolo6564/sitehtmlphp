@@ -294,7 +294,6 @@ function reduzirStr($str,$quantidade){
         if(!$nome || !$sobrenome || !$email || !$telefone || !$mensagem){return;}
         $sql = "INSERT INTO `contato_tb` (`nome`,`sobrenome`,`email`,`telefone`,`mensagem`)
         VALUES(:nome,:sobrenome,:email,:telefone,:mensagem)";
-        $senha = criptografia($senha);
         $pdo = Database::conexao();
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nome', $nome);
