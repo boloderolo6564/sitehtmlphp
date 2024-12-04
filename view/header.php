@@ -45,12 +45,11 @@
     <a class="logo"  href="<?=constant('URL_LOCAL_SITE_PAGINA').'principal'?>"><p class = "home">InfoSports</p></a>
     
     <div class = "menu">
-        <nav id = "bar">
-        <form method = "POST" action = "#" style = "margin-top:2%;">
-            <input name = "pesquisa" type = "text" placeholder = "O que deseja?"><button type = "submit">🔎</button>
-        </form>
-            
         
+        <nav id = "bar">
+        <form method = "POST" action = "#" style = "margin-top:1%;">
+            <input style = "border-radius:15px;max-width:500px;max-height:40px;width:500px;height:40px;" name = "pesquisa" type = "text" placeholder = "O que deseja?"><button style ="border-radius:15px;width:40px;height:35px" type = "submit"><p style = "font-size:20px">🔎</p></button>
+        </form>
         <a href="<?=constant('URL_LOCAL_SITE_PAGINA').'contato'?>">
         <button id="botao" type="button">contato</button>
         </a>

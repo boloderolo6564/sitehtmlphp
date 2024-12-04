@@ -16,6 +16,8 @@ echo"<h3>".$site["titulo"]."</h3>";
 echo"<p style =text-align:left;>".$site["descricao"]."</p>";
 echo"</labek>";
 echo"</div>";
+echo"<section>";
+echo"<aside>";
 echo"<div>";
 foreach(semelhante($site["categoria"]) as $list ){
   
@@ -30,5 +32,8 @@ foreach(semelhante($site["categoria"]) as $list ){
   echo"</div>";
 };
 echo"</div>";
+echo"</aside>";
+echo"</section>";
+
 include_once("footer-news.php");
 ?>

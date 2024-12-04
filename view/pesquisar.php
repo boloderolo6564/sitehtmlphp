@@ -1,5 +1,7 @@
 <?php include_once("header.php");
 $res = semelhantename($pesquisa);
+echo"<section>";
+echo"<aside>";
 foreach ($res as $lista){
 $quantidade = 100;
 echo"<div style = 'float:left;max-width:300px;max-height:396px;'  class = esporte >";
@@ -11,6 +13,8 @@ echo"<p id = crossfit>".reduzirStr($lista["descricao"],$quantidade)."</p>";
 echo"</button>";
 echo"</a>";
 echo"</div>";}
+echo"</aside>";
+echo"</section>";
 include_once("footer-news.php");
 
 

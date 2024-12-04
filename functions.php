@@ -161,7 +161,6 @@ function reduzirStr($str,$quantidade){
     }
     function buscar($pesquisa){
         $paginaUrl = "pesquisa";
-        var_dump($paginaUrl,$pesquisa);
         return $pesquisa;
     }
     function folhear(){
