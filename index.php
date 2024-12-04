@@ -41,9 +41,11 @@ $mensagem = ($_SERVER["REQUEST_METHOD"] == "POST"
 $categoria = ($_SERVER["REQUEST_METHOD"] == "POST"
    && !empty($_POST['categoria'])) ? $_POST['categoria'] : null;
 
+$pesquisa = ($_SERVER["REQUEST_METHOD"] == "POST"
+   && !empty($_POST['pesquisa'])) ? $_POST['pesquisa'] : null;
 $resposta = 0;
 
-
+$pesquisa = buscar($pesquisa);
 $resposta = calcularImc($peso, $altura);
 $classificacao = classificarImc($resposta);
 
@@ -58,8 +60,17 @@ if($_GET && isset($_GET['pagina'])){
 }
 include_once("view/header.php");
 
+if($pesquisa == true){
+  $paginaUrl = "pesquisa";
+  
+}
+
 if($paginaUrl === "principal"){
   cadastrar($nome,$email,$peso,$altura,$resposta,$classificacao);
+}elseif($paginaUrl === "pesquisa"){
+  
+    
+  
 }elseif($paginaUrl === "registro"){
   cadastrarRegistro($nome, $email, $telefone,$login,$senha);
 }elseif($paginaUrl === "contato"){
@@ -97,8 +108,9 @@ if($paginaUrl === "principal"){
  
 
 if($paginaUrl === "principal"){
-  
   include_once("view/principal.php");
+}elseif($paginaUrl === "pesquisa"){
+  include_once("view/pesquisar.php");
 }elseif($paginaUrl === "cadastrar-categoria"){
   protegerTela();
   include_once("view/categoria.php"); 

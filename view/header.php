@@ -46,6 +46,11 @@
     
     <div class = "menu">
         <nav id = "bar">
+        <form method = "POST" action = "#" style = "margin-top:2%;">
+            <input name = "pesquisa" type = "text" placeholder = "O que deseja?"><button type = "submit">🔎</button>
+        </form>
+            
+        
         <a href="<?=constant('URL_LOCAL_SITE_PAGINA').'contato'?>">
         <button id="botao" type="button">contato</button>
         </a>

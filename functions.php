@@ -116,6 +116,16 @@ function reduzirStr($str,$quantidade){
         return $list;
 
     }
+     function semelhantename($categoria){
+        if(!$categoria){return;}
+        $pdo = Database::conexao();
+        $sql = "select * from `news_tb`  where `titulo` like '%$categoria%' limit 5";
+        $stmt = $pdo->prepare($sql);
+        $list = $stmt->execute();
+        $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $list;
+
+    }
      
     function cadastrarnews($titulo,$imagem,$descricao,$categoria){
         $site = "html/".$titulo.".php";
@@ -149,12 +159,17 @@ function reduzirStr($str,$quantidade){
         return $list[0];
 
     }
+    function buscar($pesquisa){
+        $paginaUrl = "pesquisa";
+        var_dump($paginaUrl,$pesquisa);
+        return $pesquisa;
+    }
     function folhear(){
         
         $quantidade = 100;
         foreach(puxarid() as $lista){
         
-            echo"<div style = 'float:left;'  class = esporte >";
+            echo"<div style = 'float:left;max-width:300px;max-height:396px;'  class = esporte >";
             echo"<a href=".constant('URL_LOCAL_SITE_NEWS').$lista["id"].">";
             echo"<button class= button type= button>";
                 echo"<img class = imagem ; src=".$lista["imagens"].">";
