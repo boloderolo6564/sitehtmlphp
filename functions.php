@@ -116,6 +116,11 @@ function reduzirStr($str,$quantidade){
         return $list;
 
     }
+//buscar
+    function buscar($pesquisa){
+        $paginaUrl = "pesquisa";
+        return $pesquisa;
+    }
      function semelhantename($categoria){
         if(!$categoria){return;}
         $pdo = Database::conexao();
@@ -158,10 +163,6 @@ function reduzirStr($str,$quantidade){
         $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $list[0];
 
-    }
-    function buscar($pesquisa){
-        $paginaUrl = "pesquisa";
-        return $pesquisa;
     }
     function folhear(){
         
