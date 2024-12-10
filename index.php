@@ -66,11 +66,7 @@ if($pesquisa == true){
 }
 
 if($paginaUrl === "principal"){
-  cadastrar($nome,$email,$peso,$altura,$resposta,$classificacao);
-}elseif($paginaUrl === "pesquisa"){
-  
-    
-  
+  cadastrar($nome,$email,$peso,$altura,$resposta,$classificacao); 
 }elseif($paginaUrl === "registro"){
   cadastrarRegistro($nome, $email, $telefone,$login,$senha);
 }elseif($paginaUrl === "contato"){
